@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SceneTransition/Scenes/Red Scene.unity
+    path: Assets/Boilerplate/SceneTransition/Scenes/Red Scene.unity
     guid: fb0ed816ff8f3254dbe1135db3b136ce
   - enabled: 1
-    path: Assets/SceneTransition/Scenes/Green Scene.unity
+    path: Assets/Boilerplate/SceneTransition/Scenes/Green Scene.unity
     guid: 094f3b855a1c70849a55a62b47b96501
   - enabled: 1
-    path: Assets/SceneTransition/Scenes/Blue Scene.unity
+    path: Assets/Boilerplate/SceneTransition/Scenes/Blue Scene.unity
     guid: 0d3dfe75800a3ce4f9bfd00a048a15e5
   - enabled: 1
-    path: Assets/SceneTransition/Scenes/LoadingScreen.unity
+    path: Assets/Boilerplate/SceneTransition/Scenes/LoadingScreen.unity
     guid: 6bd50d44c26c847479cf608ecc2ee202
   m_configObjects: {}
