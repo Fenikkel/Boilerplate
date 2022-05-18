@@ -3,9 +3,7 @@ using UnityEngine.AI;
 
 public class NavMeshMovement : MonoBehaviour
 {
-
     NavMeshAgent _NavMeshAgent;
-
 
     private void Awake()
     {

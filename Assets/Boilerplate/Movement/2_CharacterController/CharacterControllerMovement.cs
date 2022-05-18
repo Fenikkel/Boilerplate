@@ -31,7 +31,7 @@ public class CharacterControllerMovement : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Rigidbody rigidbody = hit.collider.attachedRigidbody;
+        Rigidbody rigidbody = hit.collider.attachedRigidbody; // Get the other rigidbody
 
         if (rigidbody != null)
         {
