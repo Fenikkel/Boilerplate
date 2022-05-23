@@ -6,7 +6,7 @@ public class MusicLoop : MonoBehaviour
     private AudioSource _AudioSource;
 
     [Header("Singleton")]
-    private static MusicLoop _Instance = null;
+    private static MusicLoop _Instance = null; // This value is shared for all MusicLoop instances
     public static MusicLoop Instance
     {
         get 
