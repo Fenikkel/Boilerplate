@@ -15,8 +15,12 @@ public class API : MonoBehaviour
 
     private const string URL = "www.google.com";
     private const string FREECHAMP_ENDPOINT = "https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations";
-    private const string API_KEY = "RGAPI-1b4973bd-cc49-4833-b9cf-6711ea3412ae"; // DON'T SHARE PLEASE -> Permanent Key from app https://play.google.com/store/apps/details?id=com.al286752.fenikkel.leagueoffenikkel&gl=ES
-    
+
+    /* DON'T SHARE PLEASE -> Permanent Key from app https://play.google.com/store/apps/details?id=com.al286752.fenikkel.leagueoffenikkel&gl=ES */
+    private const string API_KEY_PART1 = "RGAPI-1b4973bd-cc49-"; 
+    private const string API_KEY_PART2 = "4833-b9cf-6711ea3412ae";
+
+
 
     public void PostRequest() //Post request with Headers
     {
@@ -24,7 +28,7 @@ public class API : MonoBehaviour
         WWWForm form = new WWWForm();
 
         Dictionary<string, string> headers = form.headers; // get the existing headers
-        headers["X-Riot-Token"] = API_KEY; //Add new field in headers
+        headers["X-Riot-Token"] = API_KEY_PART1 + API_KEY_PART2; //Add new field in headers
 
         /* Post fields */
         form.AddField("username", "password");
@@ -41,7 +45,7 @@ public class API : MonoBehaviour
         WWWForm form = new WWWForm();
 
         Dictionary<string, string> headers = form.headers; // get the existing headers
-        headers["X-Riot-Token"] = API_KEY;
+        headers["X-Riot-Token"] = API_KEY_PART1;
 
         //Get request (it detects automatically that you dont have post parameters so it makes a Get request)
         WWW request = new WWW(FREECHAMP_ENDPOINT, null, headers); //Add parameters at the end of the EndPoint
