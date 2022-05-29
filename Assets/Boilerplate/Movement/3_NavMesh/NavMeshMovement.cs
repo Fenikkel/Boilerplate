@@ -17,7 +17,7 @@ public class NavMeshMovement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit)) // If we hitted a collider, we move to this point or the nearest walkable area
             {
                 Move(hit.point);
             }

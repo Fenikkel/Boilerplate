@@ -45,7 +45,7 @@ public class API : MonoBehaviour
         WWWForm form = new WWWForm();
 
         Dictionary<string, string> headers = form.headers; // get the existing headers
-        headers["X-Riot-Token"] = API_KEY_PART1;
+        headers["X-Riot-Token"] = API_KEY_PART1 + API_KEY_PART2;
 
         //Get request (it detects automatically that you dont have post parameters so it makes a Get request)
         WWW request = new WWW(FREECHAMP_ENDPOINT, null, headers); //Add parameters at the end of the EndPoint

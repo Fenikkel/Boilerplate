@@ -73,7 +73,7 @@ public class FirstPersonController : MonoBehaviour
 
         if (_IsGrounded && _Velocity.y < 0.0f)
         {
-            _Velocity.y = -0.2f; //Si ponemos un vlaor menor de 0.0f, nos aseguramos que si queda un trozo por llegar al suelo, este sera completado y no quedará el jugador flotando.
+            _Velocity.y = -0.2f; //Si ponemos un valor menor de 0.0f, nos aseguramos que si queda un trozo por llegar al suelo, este sera completado y no quedará el jugador flotando.
         }
     }
 
