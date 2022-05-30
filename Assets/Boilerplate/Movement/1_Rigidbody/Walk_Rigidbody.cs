@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RigidbodyMovement : MonoBehaviour
+public class Walk_Rigidbody : MonoBehaviour
 {
     public Mode m_Mode = Mode.Force;
     

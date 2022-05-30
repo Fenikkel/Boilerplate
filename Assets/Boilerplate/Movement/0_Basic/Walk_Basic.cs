@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BasicMovement : MonoBehaviour
+public class Walk_Basic : MonoBehaviour
 {
     public float m_Speed = 1.0f; //Meters per second
 
@@ -18,7 +18,7 @@ public class BasicMovement : MonoBehaviour
 
     private void Move(Vector3 direction)
     {
-        //transform.position += direction.normalized * m_Speed * Time.deltaTime; //normalize vector to have constant velocity when we push two keys at the same time
-        transform.position += direction * m_Speed * Time.deltaTime;
+        transform.position += direction.normalized * m_Speed * Time.deltaTime; //normalize vector to have constant velocity when we push two keys at the same time
+        //transform.position += direction * m_Speed * Time.deltaTime;
     }
 }

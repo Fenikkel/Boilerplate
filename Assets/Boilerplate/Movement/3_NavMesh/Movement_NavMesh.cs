@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NavMeshMovement : MonoBehaviour
+public class Movement_NavMesh : MonoBehaviour
 {
     NavMeshAgent _NavMeshAgent;
 

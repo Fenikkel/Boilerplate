@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterControllerMovement : MonoBehaviour
+public class Walk_CharacterController : MonoBehaviour
 {
     public Mode m_Mode = Mode.Velocity;
     [Space]
@@ -38,18 +38,26 @@ public class CharacterControllerMovement : MonoBehaviour
         switch (m_Mode)
         {
             case Mode.Velocity:
-
-                _CharacterController.SimpleMove(direction.normalized * m_Speed); // Without Time.deltaTime! "Y" velocity is ignored
+                // Without Time.deltaTime because we are modifying a velocity vector! (_CharacterController.velocity)
+                // "Y" velocity is ignored
+                _CharacterController.SimpleMove(direction.normalized * m_Speed); 
                 break;
 
             case Mode.Transform:
-
-                _CharacterController.Move(direction.normalized * Time.deltaTime * m_Speed); //Does not use gravity and you implement the Y movement
+                //Does not use gravity and you implement the Y movement
+                //We add the values directly to the Transform, so we use Time.deltaTime
+                _CharacterController.Move(direction.normalized * Time.deltaTime * m_Speed); 
                 break;
 
             default:
                 break;
-        }  
+        }
+
+        // Face forward into the walking direction
+        if (direction != Vector3.zero)
+        {
+            gameObject.transform.forward = direction;
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) // On collision, move the other GameObject if it has a rigidbody
