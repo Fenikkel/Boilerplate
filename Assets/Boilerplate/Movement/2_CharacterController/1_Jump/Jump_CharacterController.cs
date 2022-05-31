@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Jump_CharacterController : MonoBehaviour
@@ -13,6 +11,7 @@ public class Jump_CharacterController : MonoBehaviour
 
     private CharacterController _CharacterController;
     private Vector3 _PlayerVelocity_Y;
+    private bool _Grounded = false;
 
     private void Start()
     {
@@ -23,14 +22,16 @@ public class Jump_CharacterController : MonoBehaviour
 
     void Update()
     {
-        if (_CharacterController.isGrounded && _PlayerVelocity_Y.y < 0.0f) // If we are in the ground and we don't have any upwards velocity...
+        _Grounded = _CharacterController.isGrounded;
+
+        if (_Grounded && _PlayerVelocity_Y.y < 0.0f) // If we are in the ground and we don't have any upwards velocity...
         {
             // Anulate the cumulative gravity velocity 
             _PlayerVelocity_Y.y = 0f;
         }
 
         /* JUMP */
-        if (Input.GetButtonDown("Jump") && _CharacterController.isGrounded)
+        if (Input.GetButtonDown("Jump") && _Grounded)
         {
             _PlayerVelocity_Y.y += Mathf.Sqrt(_JumpHeight * JUMP_OFFSET * _Gravity); // Add a jump impulse in the velocity vector
         }

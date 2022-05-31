@@ -708,8 +708,8 @@ GameObject:
   - component: {fileID: 1779594841}
   - component: {fileID: 1779594840}
   - component: {fileID: 1779594839}
-  - component: {fileID: 1779594842}
   - component: {fileID: 1779594844}
+  - component: {fileID: 1779594838}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -717,6 +717,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1779594838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779594837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622245ff5dd7f19499c637630747214f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Speed: 3
+  _JumpHeight: 1
+  _Gravity: -9.81
+  _CanPush: 1
+  _PushForce: 0.1
+  _PushMode: 1
+  _FaceDirection: 1
 --- !u!23 &1779594839
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -781,22 +800,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1779594842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779594837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f4f5f04fd54e0e4485c02c7a15a28e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Mode: 0
-  m_Speed: 3
-  m_CanPush: 0
-  m_PushForce: 0.1
 --- !u!143 &1779594844
 CharacterController:
   m_ObjectHideFlags: 0
@@ -812,7 +815,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1828975814
