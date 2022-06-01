@@ -86,7 +86,6 @@ public class Movement_CharacterController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && _Grounded)
         {
             _PlayerVelocity_Y.y += Mathf.Sqrt(_JumpHeight * JUMP_OFFSET * _Gravity); // Add a jump impulse in the velocity vector
-            print(_PlayerVelocity_Y.y);
         }
 
         /* GRAVITY */

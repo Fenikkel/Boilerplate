@@ -1,8 +1,10 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO -> MEJOR UTILIZAR UNITY WEB REQUEST
 
 // https://youtu.be/UUQydC0IimI
 
@@ -54,7 +56,9 @@ public class API : MonoBehaviour
 
     public void WebRequest() // Simple web request
     {
+
         WWW request = new WWW(URL);
+
         StartCoroutine(OnResponse(request));
     }
 
@@ -66,3 +70,5 @@ public class API : MonoBehaviour
     }
 
 }
+
+#pragma warning restore CS0618 // Type or member is obsolete

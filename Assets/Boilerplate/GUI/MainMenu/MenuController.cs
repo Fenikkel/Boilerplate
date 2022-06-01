@@ -7,9 +7,14 @@ public class MenuController : MonoBehaviour
 {
     [Header("Volume Settings")]
     [SerializeField]
-    private Text volumeTextValue = null;    
+    private Text _VolumeTextValue = null;    
     [SerializeField]
-    private Slider volumeSlider = null;
+    private Slider _VolumeSlider = null;
+    [SerializeField]
+    private float _DefaultVolume = 0.5f;
+
+    [SerializeField]
+    private GameObject _ConfirmationPrompt = null;
 
     [Header("Levels To Load")]
     public string m_NewGameLevel;
@@ -17,6 +22,14 @@ public class MenuController : MonoBehaviour
     [SerializeField] 
     private GameObject _NoSavedGameDialog = null;
     private string _LevelToLoad;
+
+    public void Start() 
+    {  
+        //LOAD PLAYER PREFS
+        //AudioListener.volume = PlayerPrefs.GetFloat("masterVolume");
+        //_VolumeSlider.value = PlayerPrefs.GetFloat("masterVolume");
+        //_VolumeTextValue.text = PlayerPrefs.GetFloat("masterVolume").ToString("0.0");
+    }
 
     public void NewGameDialogYes()
     {
@@ -46,18 +59,33 @@ public class MenuController : MonoBehaviour
     public void SetVolume(float volume) 
     {
         AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0.0"); //One decimal format
+        _VolumeTextValue.text = volume.ToString("0.0"); //One decimal format
     }
 
     public void VolumeApply() 
     {
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+
         //Show prompt
+        StartCoroutine(ConfirmationBox());
+    }
+
+    public void ResetButton(string MenuType) 
+    {
+
+        if (MenuType == "Audio")
+        {
+            AudioListener.volume = _DefaultVolume;
+            _VolumeSlider.value = _DefaultVolume;
+            _VolumeTextValue.text = _DefaultVolume.ToString("0.0");
+            VolumeApply(); //Save to PlayerPref
+        }
     }
 
     public IEnumerator ConfirmationBox() 
     {
-        //https://www.youtube.com/watch?v=Cq_Nnw_LwnI&t=1288s
+        _ConfirmationPrompt.SetActive(true);
         yield return new WaitForSeconds(2.0f);
+        _ConfirmationPrompt.SetActive(false);
     }
 }
