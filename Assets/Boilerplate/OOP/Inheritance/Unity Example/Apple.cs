@@ -19,6 +19,6 @@ public class Apple : Fruit
     {
         // We don't set the color since the base constructor
         // sets the color that is passed as an argument.
-        Debug.Log("Default APPLE Constructor Called");
+        Debug.Log("Custom APPLE Constructor Called");
     }
 }
