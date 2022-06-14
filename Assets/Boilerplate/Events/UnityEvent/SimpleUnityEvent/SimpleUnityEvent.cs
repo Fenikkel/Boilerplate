@@ -7,12 +7,17 @@ public class SimpleUnityEvent : MonoBehaviour
     public UnityEvent m_UnityEventOne;
     public UnityEvent m_UnityEventTwo;
 
-    public Button M_Button;
-
     private float _CallInterval = 1.0f;  
     private float _Timmer = 0.0f;
 
     private bool _Swapper = true;
+
+    private void Start()
+    {
+        m_UnityEventOne.AddListener(PrintOne);
+
+        m_UnityEventTwo.AddListener(PrintTwo);
+    }
 
     private void Update()
     {
@@ -36,5 +41,15 @@ public class SimpleUnityEvent : MonoBehaviour
 
             _Swapper = !_Swapper; // Change the state         
         }
+    }
+
+    private void PrintOne() 
+    {
+        print("One called");
+    }
+
+    private void PrintTwo()
+    {
+        print("Two called");
     }
 }

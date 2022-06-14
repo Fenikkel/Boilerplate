@@ -11,7 +11,7 @@ public class SimpleUnityAction : MonoBehaviour
 
     private bool _Swapper = true;
 
-    private void Start()//OnEnable()
+    private void OnEnable()
     {
         m_UnityActionOne = PrintOne;
         m_UnityActionOne += PrintSomething;
