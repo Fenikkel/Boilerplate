@@ -14,18 +14,20 @@ public class InterpolationExample : MonoBehaviour
 
     float _SizeValue;
 
+    float _Velocity = 0.63f;
+
     void Update()
     {
         /* REPEAT */
         // From 0 to value
 
-        _SizeValue = Mathf.Repeat(Time.time / 1.6f, 1.0f);
+        _SizeValue = Mathf.Repeat(Time.time * _Velocity, 1.0f);
         m_RepeatTarget.localScale = new Vector3(_SizeValue, _SizeValue, _SizeValue);
 
         /* PING PONG */
         // From 0 to value and viceversa
 
-        _SizeValue = Mathf.PingPong(Time.time / 1.6f, 1.0f);
+        _SizeValue = Mathf.PingPong(Time.time * _Velocity, 1.0f);
         m_PingPongTarget.localScale = new Vector3(_SizeValue, _SizeValue, _SizeValue);
 
 

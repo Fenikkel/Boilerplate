@@ -1,15 +1,17 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Events; // It's a must to use events
 
 public class SimpleUnityAction : MonoBehaviour
 {
-    public UnityAction m_UnityActionOne; // Can't have arguments
+    public static UnityAction m_UnityActionOne; // Can't have arguments
     public UnityAction m_UnityActionTwo;
 
     private float _CallInterval = 1.0f;  
     private float _Timmer = 0.0f;
 
     private bool _Swapper = true;
+
+    private string test;
 
     private void OnEnable()
     {
@@ -42,11 +44,14 @@ public class SimpleUnityAction : MonoBehaviour
 
             if (_Swapper)
             {
-                m_UnityActionOne.Invoke();
+                if (m_UnityActionOne != null) // Visual way to check if null
+                {
+                    m_UnityActionOne.Invoke();
+                }
             }
             else
             {
-                m_UnityActionTwo.Invoke();
+                m_UnityActionTwo?.Invoke(); // Short way to check if null
             }
 
             _Swapper = !_Swapper; // Change the state         
