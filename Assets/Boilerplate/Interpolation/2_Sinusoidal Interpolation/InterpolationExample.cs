@@ -8,7 +8,7 @@ public class InterpolationExample : MonoBehaviour
     public Transform m_PingPongTarget;
     
     public Transform m_LerpTarget;
-    public Transform m_SmoothDampTarget;
+    public Transform m_SmoothStepTarget;
 
     float _Step;
 
@@ -51,7 +51,7 @@ public class InterpolationExample : MonoBehaviour
         // From 0 to value and viceversa, but smoothed
         _SizeValue = Mathf.SmoothStep(0.0f, 1.0f, _Step);
 
-        m_SmoothDampTarget.localScale = new Vector3(_SizeValue, _SizeValue, _SizeValue);
+        m_SmoothStepTarget.localScale = new Vector3(_SizeValue, _SizeValue, _SizeValue);
 
 
 

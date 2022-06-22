@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class DelegateHandler : MonoBehaviour
 {
-     
+
     public delegate void OnClickDelegate();
+
     public static OnClickDelegate myDelegate;
 
-    public void TriggerDelegate() 
+    private void Start()
+    {
+        myDelegate += Loquesea;
+    }
+
+    public void TriggerDelegate()
     {
 
         //Short way
@@ -17,5 +23,10 @@ public class DelegateHandler : MonoBehaviour
         {
             myDelegate(); // Send broadcast
         }
-    } 
+    }
+
+    public void Loquesea()
+    {
+        print("jaja");
+    }
 }

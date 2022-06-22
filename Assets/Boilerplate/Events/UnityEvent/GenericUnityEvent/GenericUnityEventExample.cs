@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class MyMultipleFloatEvent : UnityEvent<float,float, float>
+public class MyMultipleFloatEvent : UnityEvent<float, float, float>
 {
 }
 
-public class ExampleClass : MonoBehaviour
+public class GenericUnityEventExample : MonoBehaviour
 {
     public MyMultipleFloatEvent m_MyCustomUnityEvent;
 
