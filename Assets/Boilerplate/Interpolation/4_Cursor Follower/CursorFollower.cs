@@ -26,7 +26,7 @@ public class CursorFollower : MonoBehaviour
 
     void Update()
     {
-        _LastPos = Vector2.Lerp(Input.mousePosition, _LastPos, m_FollowingForce);
+        _LastPos = Vector2.Lerp(Input.mousePosition, _LastPos, m_FollowingForce * Time.deltaTime);
 
         _FollowerRT.position = _LastPos; // With .position it doesn't matter were you anchored the image
     }
