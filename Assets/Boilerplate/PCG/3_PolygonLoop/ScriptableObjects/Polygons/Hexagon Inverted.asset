@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af2c658081b39438cefe27a7d98bfd, type: 3}
+  m_Name: Hexagon Inverted
+  m_EditorClassIdentifier: 
+  circumradius: 5
+  numInnerPolygons: 47
+  lineWidth: 0.334
+  subdivisions: 2
+  pointPos:
+  - 90
+  - 150
+  - 210
+  - 270
+  - 330
+  - 30

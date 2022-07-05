@@ -328,9 +328,8 @@ MonoBehaviour:
   m_Container: {fileID: 688182619}
   m_GreenArea: {fileID: 1871032928}
   m_Arrow: {fileID: 567727659}
-  m_ArrowSpeed: 3.97
-  SolvedClip: {fileID: 8300000, guid: dd7e659e32d9afd4c852629ce6744e5e, type: 3}
-  FailedClip: {fileID: 8300000, guid: b31737d1481d41c428ba2d8388dac398, type: 3}
+  _SolvedClip: {fileID: 0}
+  _FailedClip: {fileID: 0}
 --- !u!222 &688182621
 CanvasRenderer:
   m_ObjectHideFlags: 0
