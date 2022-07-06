@@ -148,7 +148,7 @@ public class PolygonDrawer : MonoBehaviour
         m_PolygonConfig = (PolygonConfiguration)ScriptableObject.CreateInstance("PolygonConfiguration");
 
         m_PolygonConfig.circumradius = 5.0f;
-        m_PolygonConfig.numInnerPolygons = Random.Range(2, 12);
+        m_PolygonConfig.numInnerPolygons = Random.Range(2, 50);
         m_PolygonConfig.subdivisions = Random.Range(1, 11);
         m_PolygonConfig.lineWidth = 0.334f;
 
