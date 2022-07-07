@@ -18,7 +18,7 @@ public class BasicFieldOfView : MonoBehaviour
 
     void Start()
     {
-        // Get the player reference
+        // Get the player reference (remember: TAG the player!)
         _Player = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Use the Spotlight as vision cone
