@@ -25,6 +25,7 @@ public class ArraySort : MonoBehaviour
 
     void Start()
     {
+        
 
         //int totalNumberCells = rectangularArray2D.Length;
         //int rowSize = rectangularArray2D.GetLength(0);
