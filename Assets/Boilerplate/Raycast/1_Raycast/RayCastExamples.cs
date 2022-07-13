@@ -1,5 +1,7 @@
 using UnityEngine;
 
+/* Warning, "maxDistance" and "layerMask" can be mixed because the int and float accepts variables of type LayerMask */
+
 public class RayCastExamples : MonoBehaviour
 {
     public Transform m_StartPoint;
@@ -19,9 +21,7 @@ public class RayCastExamples : MonoBehaviour
     void Update()
     {
         /* BASIC */
-        _DrawEndPoint.x = m_StartPoint.right.x * 100; // Infinite
-        _DrawEndPoint.y = m_StartPoint.position.y;
-        _DrawEndPoint.z = m_StartPoint.right.z * 100; // Infinite
+        _DrawEndPoint = m_StartPoint.position + m_StartPoint.right * 100f;
 
         if (Physics.Raycast(m_StartPoint.position, m_StartPoint.right)) // Infinite ray
         {
@@ -36,11 +36,9 @@ public class RayCastExamples : MonoBehaviour
 
 
         /* LAYERS */
-        _DrawEndPoint.x = m_StartPoint.forward.x * 100; // Infinite
-        _DrawEndPoint.y = m_StartPoint.position.y;
-        _DrawEndPoint.z = m_StartPoint.forward.z * 100; // Infinite
+        _DrawEndPoint = m_StartPoint.position + m_StartPoint.forward * 100f;
 
-        if (Physics.Raycast(m_StartPoint.position, m_StartPoint.forward, m_RayLayerMask)) // Infinite ray
+        if (Physics.Raycast(m_StartPoint.position, m_StartPoint.forward, Mathf.Infinity, m_RayLayerMask)) // Infinite ray
         {
             // There is a collider with the "Obstacle" layer in the line path (RED)
             Debug.DrawLine(m_StartPoint.position, _DrawEndPoint, Color.red);
@@ -53,9 +51,7 @@ public class RayCastExamples : MonoBehaviour
 
 
         /* HIT POINT */
-        _DrawEndPoint.x = -m_StartPoint.forward.x * m_RayLength; // Infinite
-        _DrawEndPoint.y = m_StartPoint.position.y;
-        _DrawEndPoint.z = -m_StartPoint.forward.z * m_RayLength; // Infinite
+        _DrawEndPoint = m_StartPoint.position + -m_StartPoint.forward * m_RayLength;
 
         if (Physics.Raycast(m_StartPoint.position, -m_StartPoint.forward, out _Hit, m_RayLength))
         {
