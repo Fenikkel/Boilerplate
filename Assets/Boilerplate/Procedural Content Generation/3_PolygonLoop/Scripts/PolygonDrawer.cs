@@ -18,7 +18,7 @@ public class PolygonDrawer : MonoBehaviour
 
     void Start()
     {
-        PolygonLoop();
+        CreatePolygonLoop();
     }
 
     void Update()
@@ -29,9 +29,9 @@ public class PolygonDrawer : MonoBehaviour
         }
     }
 
-    #region Hexagon
+    #region Polygon
 
-    private void PolygonLoop()
+    private void CreatePolygonLoop()
     {
         if (_DrawCoroutine != null)
         {
@@ -158,10 +158,10 @@ public class PolygonDrawer : MonoBehaviour
             pointPos[i] = Random.Range(0f, 360f);
         }
         
-        System.Array.Sort(pointPos); // Sort if you want to make polygons
+        System.Array.Sort(pointPos); // Sort if you want to make polygons, comment if you want random shit
 
         m_PolygonConfig.pointPos = pointPos;
 
-        PolygonLoop();
+        CreatePolygonLoop();
     }
 }

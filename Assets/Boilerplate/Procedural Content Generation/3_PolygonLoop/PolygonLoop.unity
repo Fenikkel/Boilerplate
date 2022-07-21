@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0.9254902, b: 0.75686276, a: 0}
+  m_BackGroundColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9708275df1be7bf4bb299fb7aca76739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PolygonConfig: {fileID: 11400000, guid: 882a9460665c94d49a9dd4fa2412654e, type: 2}
+  m_PolygonConfig: {fileID: 11400000, guid: dcfd7f57d75d07b4aa2732008eed5509, type: 2}
   m_LineConfiguration: {fileID: 11400000, guid: d92bc6e789852f24cba2c60f904a2dc4, type: 2}
   m_DrawLineByLine: 0
   m_DrawDelay: 0.0005
