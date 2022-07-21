@@ -108,15 +108,12 @@ public class PolygonDrawer : MonoBehaviour
                 neighbourPoints[a] = polygonPoints[a - 1]; // we set the point at her right
             }
             neighbourPoints[0] = polygonPoints[polygonPoints.Length - 1];
-            
+
 
             /* Get the points for the inner polygon depending on how many subdivisions we want */
-            for (int unused = 0; unused < m_PolygonConfig.subdivisions; unused++)
+            for (int a = 0; a < polygonPoints.Length; a++)
             {
-                for (int a = 0; a < polygonPoints.Length; a++)
-                {
-                    neighbourPoints[a] = new Vector3((polygonPoints[a].x + neighbourPoints[a].x) / 2, (polygonPoints[a].y + neighbourPoints[a].y) / 2, 0);
-                }
+                neighbourPoints[a] = Vector3.Lerp(polygonPoints[a], neighbourPoints[a], 1f / Mathf.Pow(2f, m_PolygonConfig.subdivisions));
             }
 
             for (int b = 0; b < polygonPoints.Length; b++)

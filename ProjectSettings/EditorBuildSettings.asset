@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Boilerplate/Mobile/Camera/Camera Example.unity
+    guid: 19446fa331ca9e4488ccb8e37d261d27
+  - enabled: 0
     path: Assets/Boilerplate/Mobile/Gyroscope/Gyro Example.unity
     guid: e8982e02e7881704caae2676bb36f1c3
   - enabled: 0
